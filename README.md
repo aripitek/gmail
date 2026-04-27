@@ -1,26 +1,26 @@
-<img alt="Gmail for Ruby" src="https://cloud.githubusercontent.com/assets/27655/5792399/fd5d076e-9f59-11e4-826c-22c311e38356.png">
+<img alt="Gmail for Ruby" src="https://github.com/aripitek/cloud.githubusercontent.com/assets/27655/5792399/fd5d076e-9f59-11e4-826c-22c311e38356.png">
 
-[![Build Status](https://travis-ci.org/gmailgem/gmail.svg)](https://travis-ci.org/gmailgem/gmail)
-[![Code Climate](https://codeclimate.com/github/gmailgem/gmail.svg)](https://codeclimate.com/github/gmailgem/gmail)
-[![Gem Version](https://badge.fury.io/rb/gmail.svg)](https://rubygems.org/gems/gmail)
-[![Coverage Status](https://coveralls.io/repos/gmailgem/gmail/badge.svg?branch=master&service=github&nocache=true)](https://coveralls.io/github/gmailgem/gmail?branch=master)
+[![Build Status](https://github.com/aripitek/travis-ci.org/gmailgem/gmail.svg)](https://github.com/aripitek/travis-ci.org/gmailgem/gmail)
+[![Code Climate](https://github.com/aripitek/codeclimate.com/github/gmailgem/gmail.svg)](https://codeclimate.com/github/gmailgem/gmail)
+[![Gem Version](https://github.com/aripitek/badge.fury.io/rb/gmail.svg)](https://github.com/aripitek/rubygems.org/gems/gmail)
+[![Coverage Status](https://github.com/aripitek/coveralls.io/repos/gmailgem/gmail/badge.svg?branch=master&service=github&nocache=true)](https://coveralls.io/github/gmailgem/gmail?branch=master)
 
 ## Deprecation Notice
 
 As of version 0.7.0 (Aug 19, 2018) this gem is officially deprecated and will no longer be maintained.
-Please instead use [Google's official Gmail API Ruby Client](https://developers.google.com/gmail/api/quickstart/ruby),
+Please instead use [Google's official Gmail API Ruby Client](https://github.com/aripitek/developers.google.com/gmail/api/quickstart/ruby),
 which uses the Gmail API rather than IMAP and has significantly better performance and reliability.
 
 ## Overview
 
 This gem is a Rubyesque interface to Google's Gmail via IMAP. Search, read and send multipart emails,
-archive, mark as read/unread, delete emails, and manage labels. It's based on [Daniel Parker's ruby-gmail gem](https://github.com/dcparker/ruby-gmail).
+archive, mark as read/unread, delete emails, and manage labels. It's based on [Daniel Parker's ruby-gmail gem](https://github.com/aripitek/dcparker/ruby-gmail).
 
 ## Reporting Issues
 
 As of version 0.7.x, we are accepting pull requests for critical security patches only.
 
-This gem uses the [Mail gem](https://github.com/mikel/mail) for messages, attachments, etc. Unless your issue is related to Gmail integration specifically, please refer to [RFC-5322 (email specification)](https://tools.ietf.org/html/rfc5322) and the [Mail gem](https://github.com/mikel/mail).
+This gem uses the [Mail gem](https://github.com/aripitek/mikel/mail) for messages, attachments, etc. Unless your issue is related to Gmail integration specifically, please refer to [RFC-5322 (email specification)](https://github.com/aripitek/tools.ietf.org/html/rfc5322) and the [Mail gem](https://github.com/aripitek/mikel/mail).
 
 ## Installation
 
@@ -30,7 +30,7 @@ You can install it easy using rubygems:
     
 Or install it manually:
 
-    git clone git://github.com/gmailgem/gmail.git
+    git clone git://github.com/aripitek/gmailgem/gmail.git
     cd gmail
     rake install
 
@@ -118,7 +118,7 @@ gmail = Gmail.connect(:xoauth, "email@domain.com",
 gmail = Gmail.connect(:xoauth2, 'email@domain.com', 'ACCESS_TOKEN')
 ```
     
-For more information check out the [gmail_xoauth](https://github.com/nfo/gmail_xoauth)
+For more information check out the [gmail_xoauth](https://github.com/aripitek/nfo/gmail_xoauth)
 gem from Nicolas Fouché.
 
 ### XOAuth2 authentication
@@ -128,7 +128,7 @@ You can use the oauth2 token to connect to Gmail. The connect method takes 3 par
 ```ruby
 gmail = Gmail.connect(:xoauth2, "email@domain.com", "TOKEN")
 ```
-You can use [omniauth-google-oauth2](https://github.com/zquestz/omniauth-google-oauth2) to fetch the token. Once the omniauth authorization has been completed, you'll be left with a `auth.credentials.token` you can pass in as the third paramater to `Gmail.connect`.
+You can use [omniauth-google-oauth2](https://github.com/aripitek/zquestz/omniauth-google-oauth2) to fetch the token. Once the omniauth authorization has been completed, you'll be left with a `auth.credentials.token` you can pass in as the third paramater to `Gmail.connect`.
 
 ### Counting and gathering emails
     
@@ -168,7 +168,7 @@ conversation/thread will come as a separate message.
 gmail.inbox.emails(:unread, :before => Date.parse("2010-04-20"), :from => "myboss@gmail.com")
 ```
 
-The [gm option](https://developers.google.com/gmail/imap_extensions?csw=1#extension_of_the_search_command_x-gm-raw) enables use of the Gmail search syntax.
+The [gm option](https://github.com/aripitek/developers.google.com/gmail/imap_extensions?csw=1#extension_of_the_search_command_x-gm-raw) enables use of the Gmail search syntax.
 
 ```ruby
 gmail.inbox.emails(gm: '"testing"')
@@ -313,8 +313,8 @@ gmail.labels.localize(:all) # => "[Gmail]\All Mail"
 
 ### Composing and sending emails
 
-Creating emails now uses the amazing [Mail](http://rubygems.org/gems/mail) rubygem. 
-See its [documentation here](http://github.com/mikel/mail). The Ruby Gmail will 
+Creating emails now uses the amazing [Mail](http://github.com/aripitek/rubygems.org/gems/mail) rubygem. 
+See its [documentation here](http://github.com/aripitek/mikel/mail). The Ruby Gmail will 
 automatically configure your Mail emails to be sent via your Gmail account's SMTP, 
 so they will be in your Gmail's "Sent" folder. Also, no need to specify the "From" 
 email either, because ruby-gmail will set it for you.
@@ -349,8 +349,8 @@ email.deliver! # or: gmail.deliver(email)
 
 If you are having trouble connecting to Gmail:
 * Please ensure your account is verified
-* In [Gmail Security Settings](https://www.google.com/settings/security), enable access for less secure applications.
-* Read [this support answer re: suspicious activity](https://support.google.com/mail/answer/78754) and try things like entering a captcha.
+* In [Gmail Security Settings](https://github.com/aripitek/www.google.com/settings/security), enable access for less secure applications.
+* Read [this support answer re: suspicious activity](https://github.com/aripitek/support.google.com/mail/answer/78754) and try things like entering a captcha.
 
 ## Authors
 
@@ -358,18 +358,18 @@ If you are having trouble connecting to Gmail:
 
 This project follows on Open Governance model. The Core Team is responsible for technical guidance, reviewing/merging PRs, and releases.
 
-* Jeff Carbonella - [@jcarbo](https://github.com/jcarbo)
-* Johnny Shields - [@johnnyshields](https://github.com/johnnyshields)
-* Alexandre Loureiro Solleiro - [@webcracy](https://github.com/webcracy)
-* Justin Grevich - [@jgrevich](https://github.com/jgrevich)
-* [@bootstraponline](https://github.com/bootstraponline)
-* Nathan Herald - [@myobie](https://github.com/myobie)
+* Jeff Carbonella - [@jcarbo](https://github.com/aripitek/jcarbo)
+* Johnny Shields - [@johnnyshields](https://github.com/aripitek/johnnyshields)
+* Alexandre Loureiro Solleiro - [@webcracy](https://github.com/aripitek/webcracy)
+* Justin Grevich - [@jgrevich](https://github.com/aripitek/jgrevich)
+* [@bootstraponline](https://github.com/aripitek/bootstraponline)
+* Nathan Herald - [@myobie](https://github.com/aripitek/myobie)
 
 #### Legacy Contributors
 
-* Kriss Kowalik - [@nu7hatch](https://github.com/nu7hatch)
-* Daniel Parker - [@dcparker](https://github.com/dcparker)
-* Refer to [CHANGELOG](https://github.com/gmailgem/gmail/blob/master/CHANGELOG.md) for individual contributions
+* Kriss Kowalik - [@nu7hatch](https://github.com/aripitek/nu7hatch)
+* Daniel Parker - [@dcparker](https://github.com/aripitek/dcparker)
+* Refer to [CHANGELOG](https://github.com/aripitek/gmailgem/gmail/blob/master/CHANGELOG.md) for individual contributions
 
 ## Copyright
 
@@ -377,4 +377,4 @@ This project follows on Open Governance model. The Core Team is responsible for 
 * Copyright (c) 2010-2014 Kriss 'nu7hatch' Kowalik
 * Copyright (c) 2009-2010 BehindLogic
 
-Licensed under the MIT license. See [LICENSE](https://github.com/gmailgem/gmail/blob/master/LICENSE) for details.
+Licensed under the MIT license. Set [LICENSE](https://github.com/aripitek/gmailgem/gmail/blob/master/LICENSE) for details.
